@@ -27,14 +27,21 @@ br = t["Event.mRunId"]
 #Get branch entries as array
 # ALternative option is: 
 # print(file["PicoDst"].array("Event.mRunId"))
-arr = br.array() 
-print(arr)
+# arr = br.array() 
+# print(arr)
 
 p_x = file["PicoDst"]["Track"]["Track.mPMomentumX"].array()
 p_y = file["PicoDst"]["Track"]["Track.mPMomentumY"].array()
 p_z = file["PicoDst"]["Track"]["Track.mPMomentumZ"].array()
 
-print(p_x, "\t", p_y, "\t", p_z)
+# px = numpy.array(p_x)
+# py = numpy.array(p_y)
+pz = numpy.array(p_z)
 
-plt.hist(numpy.array(p_x))
+# p =  numpy.sqrt(p_x**2 + p_y**2 + p_z**2)
+
+#print(p_x, "\t", p_y, "\t", p_z)
+
+#plt.hist(numpy.array(p_y))
+plt.hist(pz, bins=100, range=(0, 20))
 plt.show()
